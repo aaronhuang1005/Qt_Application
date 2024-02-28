@@ -1,0 +1,9 @@
+# ninja log v5
+1	293	7308353224334570	qt_application_autogen/timestamp	d7bcbce23cfb20e2
+1	293	7308353224334570	qt_application_autogen/mocs_compilation.cpp	d7bcbce23cfb20e2
+1	293	7308353224334570	D:/Qt project/Qt_application/build-qt_application-Desktop_Qt_6_6_1_MinGW_64_bit-Release/qt_application_autogen/timestamp	d7bcbce23cfb20e2
+1	293	7308353224334570	D:/Qt project/Qt_application/build-qt_application-Desktop_Qt_6_6_1_MinGW_64_bit-Release/qt_application_autogen/mocs_compilation.cpp	d7bcbce23cfb20e2
+293	1049	7308353232206804	CMakeFiles/qt_application.dir/qt_application_autogen/mocs_compilation.cpp.obj	a396e27aae49223a
+297	1051	7308353232236811	CMakeFiles/qt_application.dir/main.cpp.obj	a83e7af96b4e77c4
+295	1582	7308353237545502	CMakeFiles/qt_application.dir/dialog.cpp.obj	49b6a19251c57c96
+1583	1659	7308353238287035	qt_application.exe	e31a245a1390b9b8
