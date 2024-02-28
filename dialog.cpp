@@ -165,7 +165,7 @@ void Dialog::plusnum(){
         numbers.append(showtext);
         numbers.append("+");
         showtext = "";
-        ui -> anser -> setText(showtext);
+        //ui -> anser -> setText(showtext);
         qDebug() << numbers;
     }
 }
@@ -175,7 +175,7 @@ void Dialog::minusnum(){
         numbers.append(showtext);
         numbers.append("-");
         showtext = "";
-        ui -> anser -> setText(showtext);
+        //ui -> anser -> setText(showtext);
         qDebug() << numbers;
     }
 }
@@ -185,7 +185,7 @@ void Dialog::timenum(){
         numbers.append(showtext);
         numbers.append("*");
         showtext = "";
-        ui -> anser -> setText(showtext);
+        //ui -> anser -> setText(showtext);
         qDebug() << numbers;
     }
 }
@@ -195,12 +195,42 @@ void Dialog::dividenum(){
         numbers.append(showtext);
         numbers.append("/");
         showtext = "";
-        ui -> anser -> setText(showtext);
+        //ui -> anser -> setText(showtext);
         qDebug() << numbers;
     }
 }
 
 void Dialog::enter(){
+    if(showtext.isEmpty() != true && QString::compare(showtext, "0.", Qt::CaseSensitive) != 0){
+        numbers.append(showtext);
+        qDebug() << numbers;
+    }
+    int i,n = numbers.size();
+    double a,b;
+    for(i = 0; i < n-1; i++){
+        qDebug() << i << numbers[i] << numbers;
+        if(QString::compare(numbers[i], "+", Qt::CaseSensitive) == 0){
+            a = numbers[i-1].toDouble();
+            b = numbers[i+1].toDouble();
+            numbers[i+1] = QString::number(a+b);
+        }else if(QString::compare(numbers[i], "-", Qt::CaseSensitive) == 0){
+            a = numbers[i-1].toDouble();
+            b = numbers[i+1].toDouble();
+            numbers[i+1] = QString::number(a-b);
+        }else if(QString::compare(numbers[i], "*", Qt::CaseSensitive) == 0){
+            a = numbers[i-1].toDouble();
+            b = numbers[i+1].toDouble();
+            numbers[i+1] = QString::number(a*b);
+        }else if(QString::compare(numbers[i], "/", Qt::CaseSensitive) == 0){
+            a = numbers[i-1].toDouble();
+            b = numbers[i+1].toDouble();
+            numbers[i+1] = QString::number(a/b);
+        }
+    }
+    showtext = numbers[numbers.size()-1];
+    ui -> anser -> setText(showtext);
+    numbers.clear();
+    showtext = "";
 
 }
 
